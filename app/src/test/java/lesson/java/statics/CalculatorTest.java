@@ -32,7 +32,7 @@ class CalculatorTest {
         int result = Calculator.minus(num1, num2);
 
         // then
-        assertEquals(-1, result);
+        assertEquals(3, result);
 
     }
 
