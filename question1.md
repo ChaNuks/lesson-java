@@ -13,8 +13,6 @@
    1. Serial GC : 싱글 쓰레드로 동작하며 Mark - Sweep - Compact로 진행된다.
    2. Parallel GC : Young 영역에서 일어나는 GC를 멀티 쓰레드로 병렬처리한다.
                     즉, 혼자가 아닌 여럿이서 함께 작업한다고 보면 된다.
-   3. Parallel Old GC : Young 영역 뿐만 아니라, Old 영역까지도 멀티쓰레드 방식을 사용한다.
-   4. CMS GC : stop the world로 어플리케이션이 멈추는 현상을 줄이고 나온 GC 알고리즘이다.
    5. G1 GC : 현재 GC 알고리즘들 중 stop the world 시간이 가장 짧다.
               기존 Young / Old 영역으로 나누어 사용한 것과는 달리 Region이라는 개념을 새로 도입하여 사용한다.
               부분적으로 region 단위를 탐색하여 garbage가 많은 region을 우선적으로 GC수행한다.
@@ -23,13 +21,19 @@
 
 ### 3. Minor GC와 Major GC에 대해 설명해보세요 (자세히 X)
 ~~~
-- Minor GC : Young 영역에서 발생하는 GC
+1. Minor GC : Young 영역에서 발생하는 GC
              더 작은 세 개의 부분으로 나뉘는데, Eden영역과 2개의 Survivor영역(S0, S1)이 있다.
              대부분의 객체는 Eden영역에서 생성되며, 
              Minor GC 과정 중 Eden과 Survivor 영역에서 살아남은 객체는 다른 Survivor 영윽으로 복사된다.
              상대적으로 빈번하게 발생하고, 처리 시간이 짧다.
-- Major GC : Old 영역에서 발생하는 GC
+2. Major GC : Old 영역에서 발생하는 GC
              Young 영역에서 일정 기간 생존하여 여러 Minor GC를 거치면 Old로 이동된다.
+
+3. GC가 오랫동안 지속된다면?
+- 응답 지연
+- CPU 소비
+- 메모리 누수
+- 어플리케이션 성능 하락
 ~~~
 --- 
 
@@ -41,7 +45,7 @@
 3. JVM은 클래스들을 로드한다.
    .class 파일들을 메모리에 로드한다.
 4. 로드된 바이트코드는 샐행 엔진에서 의해 처리된다.
-   실행 엔진에는 인터프리터, JIT 컴파일러 두 방식이 있다. 
+   실행 엔진에는 인터프리터, JIT 컴파일러 두 방식이 있다.
 ~~~
 ---
 
