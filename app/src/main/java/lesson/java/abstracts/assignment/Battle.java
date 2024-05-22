@@ -34,7 +34,7 @@ class Battle {
 
             if (battleMenu == 1) {
 
-                weapon.battle();
+//                weapon.battle();
 
             } else if (battleMenu == 2) {
                 return; // 종료

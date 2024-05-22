@@ -1,4 +1,4 @@
-package lesson.java.collections.assignment.map_02;
+package lesson.java.collections.assignment.set_01;
 
 // 1. 중복 제거
 

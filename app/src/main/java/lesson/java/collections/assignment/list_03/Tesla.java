@@ -4,9 +4,9 @@ import java.time.YearMonth;
 
 public class Tesla implements Car{
 
-    private String model;
-    private int price;
-    private YearMonth deliveryDate;
+    private final String model;
+    private final int price;
+    private final YearMonth deliveryDate;
 
     public Tesla(String model, int price, YearMonth deliveryDate) {
         this.model = model;

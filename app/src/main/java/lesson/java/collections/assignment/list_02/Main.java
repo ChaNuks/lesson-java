@@ -20,19 +20,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<Numbers> numbersList = new ArrayList<>();
+        List<Number> numbers = new ArrayList<>();
 
-        numbersList.add(new Numbers("5", 1));
-        numbersList.add(new Numbers("8", 1));
-        numbersList.add(new Numbers("10", 1));
-        numbersList.add(new Numbers("10", 2));
-        numbersList.add(new Numbers("1", 2));
-        numbersList.add(new Numbers("1", 1));
-        numbersList.add(new Numbers("1", 3));
+        numbers.add(new Number("5", 1));
+        numbers.add(new Number("8", 1));
+        numbers.add(new Number("10", 1));
+        numbers.add(new Number("10", 2));
+        numbers.add(new Number("1", 2));
+        numbers.add(new Number("1", 1));
+        numbers.add(new Number("1", 3));
 
-        Comparator<Numbers> numbersComparator = new Comparator<Numbers>() {
+        Comparator<Number> numbersComparator = new Comparator<Number>() {
             @Override
-            public int compare(Numbers o1, Numbers o2) {
+            public int compare(Number o1, Number o2) {
 
                 int numComparison = Integer.compare(Integer.parseInt(o1.getNumber()), Integer.parseInt(o2.getNumber()));
 
@@ -44,10 +44,10 @@ public class Main {
             }
         };
 
-        numbersList.sort(numbersComparator);
+        numbers.sort(numbersComparator);
 
-        for (Numbers numbers : numbersList) {
-            System.out.println("Num " + "(num = " + numbers.getNumber() + ", " + "priority = " + numbers.getPriority() + ")");
+        for (Number number : numbers) {
+            System.out.println("Num " + "(num = " + number.getNumber() + ", " + "priority = " + number.getPriority() + ")");
         }
     }
 }

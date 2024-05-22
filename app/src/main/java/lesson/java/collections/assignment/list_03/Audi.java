@@ -4,9 +4,9 @@ import java.time.YearMonth;
 
 public class Audi implements Car{
 
-    private String model;
-    private int price;
-    private YearMonth deliveryDate;
+    private final String model;
+    private final int price;
+    private final YearMonth deliveryDate;
 
     public Audi(String model, int price, YearMonth deliveryDate) {
         this.model = model;

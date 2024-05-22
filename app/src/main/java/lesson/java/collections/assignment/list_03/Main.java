@@ -47,12 +47,10 @@ public class Main {
             @Override
             public int compare(Car o1, Car o2) {
 
-                int priceComparison = Integer.compare(o1.getPrice(), o2.getPrice());
-
-                if (priceComparison != 0) {
-                    return priceComparison;
-                } else {
+                if (o1.getPrice() == o2.getPrice()) {
                     return o1.getDeliveryDate().compareTo(o2.getDeliveryDate());
+                } else {
+                    return Integer.compare(o1.getPrice(), o2.getPrice());
                 }
             }
         };

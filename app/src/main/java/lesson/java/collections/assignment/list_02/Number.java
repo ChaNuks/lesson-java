@@ -1,11 +1,11 @@
 package lesson.java.collections.assignment.list_02;
 
-public class Numbers {
+public class Number {
 
     private String number;
     private int priority;
 
-    public Numbers(String number, int priority) {
+    public Number(String number, int priority) {
         this.number = number;
         this.priority = priority;
     }
