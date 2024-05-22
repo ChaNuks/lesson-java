@@ -13,6 +13,7 @@ public class Coke implements Bevarage{
         System.out.println("맛있어");
     }
 
+    @Override
     public String getName() {
         return this.name;
     }

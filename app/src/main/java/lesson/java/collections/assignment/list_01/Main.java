@@ -26,8 +26,7 @@ public class Main {
         listt.add("luxury");
 
         // 오름차순으로 정렬하기
-
-        listt.sort(new Comparator<String>() {
+        Comparator<String> alphabet = new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
                 if (o1.length() == o2.length()) {
@@ -36,21 +35,13 @@ public class Main {
                     return Integer.compare(o1.length(), o2.length());
                 }
             }
-        });
+        };
 
+
+        listt.sort(alphabet);
         System.out.println("오름차순 : " + listt);
 
-        listt.sort(Collections.reverseOrder(new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                if (o1.length() == o2.length()) {
-                    return o1.compareTo(o2);
-                } else {
-                    return Integer.compare(o1.length(), o2.length());
-                }
-            }
-        }));
-
+        listt.sort(Collections.reverseOrder(alphabet));
         System.out.println("내림차순 : " + listt);
     }
 }

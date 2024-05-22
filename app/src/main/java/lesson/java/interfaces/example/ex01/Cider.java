@@ -13,6 +13,7 @@ public class Cider implements Bevarage{
         System.out.println("맛없어");
     }
 
+    @Override
     public String getName() {
         return this.name;
     }
